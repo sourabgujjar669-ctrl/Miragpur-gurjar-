@@ -1,167 +1,407 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Miragpur Gurjar | Our Village, Our Heritage</title>
+  <title>मीरगपुर गुर्जर | हमारा गाँव, हमारी विरासत</title>
 
-    <meta name="description" content="Discover Miragpur Gurjar, its heritage, culture, history, people and vision for a brighter future.">
+  <meta name="description" content="मीरगपुर गाँव का परिचय, इतिहास, संस्कृति, शिक्षा और विकास की जानकारी।">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f7f2;
-            color: #26352b;
-            line-height: 1.7;
-        }
+  <style>
+    /* 1. पूरी वेबसाइट की सामान्य सेटिंग */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background: #174d35;
-            color: white;
-            text-align: center;
-            padding: 35px 15px;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 75px;
+    }
 
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
+    body {
+      font-family: Arial, "Noto Sans Devanagari", sans-serif;
+      background: #f4f7f2;
+      color: #24332b;
+      line-height: 1.7;
+    }
 
-        header p {
-            font-size: 16px;
-            margin: 5px;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        nav {
-            background: #103b29;
-            text-align: center;
-            padding: 12px 5px;
-        }
+    /* 2. ऊपर का हेडर */
+    header {
+      background: linear-gradient(135deg, #064e3b, #16805b);
+      color: white;
+      text-align: center;
+      padding: 48px 18px 38px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 9px;
-            font-size: 14px;
-        }
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        main {
-            max-width: 850px;
-            margin: auto;
-            padding: 18px;
-        }
+    header p {
+      margin-top: 8px;
+      color: #e0f2e8;
+    }
 
-        section {
-            background: white;
-            margin: 18px 0;
-            padding: 22px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px #00000010;
-        }
+    .tagline {
+      font-size: 14px;
+    }
 
-        h2 {
-            color: #174d35;
-        }
+    /* 3. नेविगेशन मेन्यू */
+    nav {
+      background: #073b2e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 12px 8px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        .welcome {
-            text-align: center;
-            background: #e4efe5;
-        }
+    nav a {
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
 
-        footer {
-            background: #103b29;
-            color: white;
-            text-align: center;
-            padding: 22px 12px;
-        }
-    </style>
+    nav a:hover {
+      background: #16805b;
+    }
+
+    /* 4. मुख्य स्वागत सेक्शन */
+    .hero {
+      padding: 55px 20px;
+      text-align: center;
+      background: linear-gradient(180deg, #e0f2e7, #f4f7f2);
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      color: #075c43;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #08784f;
+      color: white;
+      padding: 11px 22px;
+      border-radius: 25px;
+      margin: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #064e3b;
+    }
+
+    .btn-light {
+      background: white;
+      color: #075c43;
+      border: 1px solid #08784f;
+    }
+
+    /* 5. सभी सेक्शन */
+    section {
+      padding: 38px 18px;
+      max-width: 1050px;
+      margin: auto;
+      scroll-margin-top: 70px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 27px;
+      color: #075c43;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 25px;
+      color: #58665e;
+    }
+
+    /* 6. जानकारी वाले कार्ड */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 23px;
+      border-radius: 16px;
+      border: 1px solid #e1e9e2;
+      box-shadow: 0 5px 18px rgba(20, 60, 40, 0.06);
+    }
+
+    .card .icon {
+      font-size: 32px;
+    }
+
+    .card h3 {
+      color: #086447;
+      margin: 8px 0;
+    }
+
+    .card p {
+      color: #56645b;
+      font-size: 15px;
+    }
+
+    /* 7. विशेष संदेश */
+    .highlight {
+      background: #e2f2e7;
+      border-left: 5px solid #16805b;
+      padding: 24px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    /* 8. फोटो गैलरी */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .photo-box {
+      min-height: 130px;
+      background: #e1ece3;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      color: #42604b;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* 9. फुटर */
+    footer {
+      background: #073b2e;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+      margin-top: 25px;
+    }
+
+    footer p {
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    /* 10. मोबाइल के लिए डिजाइन */
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 29px;
+      }
+
+      .hero h1 {
+        font-size: 25px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        padding: 7px 9px;
+        font-size: 13px;
+      }
+
+      section {
+        padding: 28px 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Miragpur Gurjar</h1>
-        <p>Our Village, Our Heritage, Our Pride</p>
-        <p>A Journey Through History, Culture and Progress</p>
-    </header>
+  <!-- वेबसाइट का हेडर -->
+  <header>
+    <div class="logo">🌿 मीरगपुर गुर्जर</div>
+    <p>हमारा गाँव, हमारी विरासत, हमारा गौरव</p>
+    <p class="tagline">Miragpur Gurjar | Our Village, Our Heritage</p>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#history">History</a>
-        <a href="#culture">Culture</a>
-        <a href="#development">Development</a>
-    </nav>
+  <!-- वेबसाइट का मेन्यू -->
+  <nav>
+    <a href="#home">होम</a>
+    <a href="#about">परिचय</a>
+    <a href="#history">इतिहास</a>
+    <a href="#culture">संस्कृति</a>
+    <a href="#gallery">फोटो</a>
+    <a href="#development">विकास</a>
+  </nav>
 
-    <main>
+  <!-- स्वागत -->
+  <div class="hero" id="home">
+    <h1>अपने गाँव मीरगपुर में आपका स्वागत है</h1>
+    <p>
+      मीरगपुर की पहचान, इतिहास, संस्कृति और विकास की जानकारी
+      सभी लोगों तक पहुँचाने का एक प्रयास।
+    </p>
+    <a href="#about" class="btn">गाँव के बारे में जानें</a>
+    <a href="#gallery" class="btn btn-light">फोटो देखें</a>
+  </div>
 
-        <section class="welcome">
-            <h2>Welcome to Miragpur Gurjar</h2>
-            <p>
-                Welcome to Miragpur Gurjar, a village where
-                heritage, community and hope come together.
-                This website celebrates our village, its people,
-                traditions and aspirations for the future.
-            </p>
-        </section>
+  <!-- गाँव का परिचय -->
+  <section id="about">
+    <h2 class="section-title">हमारा गाँव मीरगपुर</h2>
+    <p class="section-intro">
+      उत्तर प्रदेश के सहारनपुर जिले के मीरगपुर गाँव को जानें।
+      यहाँ गाँव की पहचान, परंपराओं और विकास से जुड़ी जानकारी मिलेगी।
+    </p>
 
-        <section id="about">
-            <h2>About Our Village</h2>
-            <p>
-                Miragpur is our home, a place connected with
-                our roots, our memories and our shared identity.
-                Through this website, we aim to introduce our
-                village to people everywhere.
-            </p>
-        </section>
+    <div class="highlight">
+      <h3>गाँव से जुड़ाव, अपनी विरासत पर गर्व</h3>
+      <p>
+        हमारा उद्देश्य गाँव की सकारात्मक पहचान को बढ़ावा देना,
+        शिक्षा के प्रति जागरूकता बढ़ाना और नई पीढ़ी को अपनी
+        विरासत से जोड़ना है।
+      </p>
+    </div>
+  </section>
 
-        <section id="history">
-            <h2>Our History and Heritage</h2>
-            <p>
-                Every village has a story worth preserving.
-                This section will share the history, local
-                traditions, important places and heritage
-                associated with Miragpur.
-            </p>
-        </section>
+  <!-- इतिहास -->
+  <section id="history">
+    <h2 class="section-title">इतिहास और विरासत</h2>
+    <p class="section-intro">
+      गाँव के इतिहास, स्थानीय मान्यताओं, महत्वपूर्ण स्थलों
+      और बाबा फकीरा दास जी से जुड़ी परंपराओं की जानकारी यहाँ जोड़ी जाएगी।
+    </p>
 
-        <section id="culture">
-            <h2>Culture and Community</h2>
-            <p>
-                Our community is strengthened by respect,
-                cooperation, education and togetherness.
-                We celebrate our traditions while encouraging
-                the next generation to learn and grow.
-            </p>
-        </section>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🏛️</div>
+        <h3>गाँव का इतिहास</h3>
+        <p>
+          मीरगपुर की ऐतिहासिक जानकारी, पुराने स्थानों और
+          गाँव के विकास से जुड़ी प्रमाणित जानकारी यहाँ पढ़ें।
+        </p>
+      </div>
 
-        <section id="development">
-            <h2>Education and Village Development</h2>
-            <p>
-                A better future begins with education,
-                opportunities for young people, clean
-                surroundings and community participation.
-                This section will highlight local initiatives
-                and ideas for village development.
-            </p>
-        </section>
+      <div class="card">
+        <div class="icon">🙏</div>
+        <h3>बाबा फकीरा दास जी</h3>
+        <p>
+          बाबा फकीरा दास जी से जुड़ी स्थानीय परंपराओं,
+          मान्यताओं और उपलब्ध ऐतिहासिक स्रोतों की जानकारी।
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <section>
-            <h2>Explore Miragpur</h2>
-            <p>
-                Village photographs, local landmarks,
-                community events and important updates
-                will be added here as this website grows.
-            </p>
-        </section>
+  <!-- संस्कृति -->
+  <section id="culture">
+    <h2 class="section-title">संस्कृति और समाज</h2>
+    <p class="section-intro">
+      आपसी सम्मान, भाईचारा, शिक्षा और सामाजिक सहयोग
+      किसी भी समुदाय की प्रगति के महत्वपूर्ण आधार हैं।
+    </p>
 
-    </main>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>भाईचारा</h3>
+        <p>
+          गाँव में आपसी सहयोग, सद्भाव और सभी लोगों के सम्मान
+          को बढ़ावा देना।
+        </p>
+      </div>
 
-    <footer>
-        <p>Miragpur Gurjar | Our Village, Our Heritage</p>
-        <p>Built with pride for our village and future generations.</p>
-    </footer>
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>शिक्षा और युवा</h3>
+        <p>
+          बच्चों की पढ़ाई, युवाओं के मार्गदर्शन और
+          करियर संबंधी उपयोगी जानकारी साझा करना।
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- फोटो गैलरी -->
+  <section id="gallery">
+    <h2 class="section-title">मीरगपुर फोटो गैलरी</h2>
+    <p class="section-intro">
+      जल्द ही यहाँ हमारे गाँव की वास्तविक तस्वीरें दिखाई जाएँगी।
+    </p>
+
+    <div class="gallery">
+      <div class="photo-box">🏡<br>गाँव की तस्वीर</div>
+      <div class="photo-box">🌳<br>गाँव का वातावरण</div>
+      <div class="photo-box">🏫<br>स्कूल और शिक्षा</div>
+      <div class="photo-box">🙏<br>धार्मिक और ऐतिहासिक स्थल</div>
+    </div>
+  </section>
+
+  <!-- विकास -->
+  <section id="development">
+    <h2 class="section-title">गाँव का विकास</h2>
+    <p class="section-intro">
+      शिक्षा, स्वच्छता, सड़क, पेयजल, पुस्तकालय और खेलकूद
+      जैसी सुविधाओं से जुड़ी जानकारी इस सेक्शन में साझा की जाएगी।
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">💧</div>
+        <h3>स्वच्छ पेयजल</h3>
+        <p>पेयजल सुविधाओं और स्वच्छता से संबंधित जानकारी।</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>खेल और पुस्तकालय</h3>
+        <p>खेलकूद, पढ़ाई और युवाओं के विकास से जुड़े प्रयास।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- नीचे का भाग -->
+  <footer>
+    <h3>मीरगपुर गुर्जर</h3>
+    <p>हमारा गाँव, हमारी विरासत, हमारा गौरव</p>
+    <p>शिक्षा • संस्कृति • भाईचारा • विकास</p>
+    <p>© 2026 Miragpur Gurjar</p>
+  </footer>
 
 </body>
 </html>
